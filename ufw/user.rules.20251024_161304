@@ -1,0 +1,76 @@
+*filter
+:ufw-user-input - [0:0]
+:ufw-user-output - [0:0]
+:ufw-user-forward - [0:0]
+:ufw-before-logging-input - [0:0]
+:ufw-before-logging-output - [0:0]
+:ufw-before-logging-forward - [0:0]
+:ufw-user-logging-input - [0:0]
+:ufw-user-logging-output - [0:0]
+:ufw-user-logging-forward - [0:0]
+:ufw-after-logging-input - [0:0]
+:ufw-after-logging-output - [0:0]
+:ufw-after-logging-forward - [0:0]
+:ufw-logging-deny - [0:0]
+:ufw-logging-allow - [0:0]
+:ufw-user-limit - [0:0]
+:ufw-user-limit-accept - [0:0]
+### RULES ###
+
+### tuple ### allow any any 0.0.0.0/0 any 192.168.0.0/16 in comment=416c6c6f7720616c6c204c414e207472616666696320284950763429203139322e3136382e302e302f3136
+-A ufw-user-input -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow any any 0.0.0.0/0 any 10.0.0.0/8 in comment=416c6c6f7720616c6c204c414e2074726166666963202849507634292031302e302e302e302f38
+-A ufw-user-input -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow any any 0.0.0.0/0 any 172.16.0.0/12 in comment=416c6c6f7720616c6c204c414e207472616666696320284950763429203137322e31362e302e302f3132
+-A ufw-user-input -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow any any 0.0.0.0/0 any 0.0.0.0/0 in_lo
+-A ufw-user-input -i lo -j ACCEPT
+
+### tuple ### allow any any 0.0.0.0/0 any 0.0.0.0/0 out_lo
+-A ufw-user-output -o lo -j ACCEPT
+
+### tuple ### route:allow any any 0.0.0.0/0 any 172.17.0.0/16 in_docker0 comment=416c6c6f7720696e636f6d696e6720446f636b6572207375626e6574203137322e31372e302e302f3136206f6e20646f636b657230
+-A ufw-user-forward -i docker0 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### route:allow any any 172.17.0.0/16 any 0.0.0.0/0 out_docker0 comment=416c6c6f77206f7574676f696e6720446f636b6572207375626e6574203137322e31372e302e302f3136206f6e20646f636b657230
+-A ufw-user-forward -o docker0 -d 172.17.0.0/16 -j ACCEPT
+
+### tuple ### route:allow any any 0.0.0.0/0 any 172.18.0.0/16 in_docker0 comment=416c6c6f7720696e636f6d696e6720446f636b6572207375626e6574203137322e31382e302e302f3136206f6e20646f636b657230
+-A ufw-user-forward -i docker0 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### route:allow any any 172.18.0.0/16 any 0.0.0.0/0 out_docker0 comment=416c6c6f77206f7574676f696e6720446f636b6572207375626e6574203137322e31382e302e302f3136206f6e20646f636b657230
+-A ufw-user-forward -o docker0 -d 172.18.0.0/16 -j ACCEPT
+
+### tuple ### route:allow any any 0.0.0.0/0 any 172.20.0.0/16 in_docker0 comment=416c6c6f7720696e636f6d696e6720446f636b6572207375626e6574203137322e32302e302e302f3136206f6e20646f636b657230
+-A ufw-user-forward -i docker0 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### route:allow any any 172.20.0.0/16 any 0.0.0.0/0 out_docker0 comment=416c6c6f77206f7574676f696e6720446f636b6572207375626e6574203137322e32302e302e302f3136206f6e20646f636b657230
+-A ufw-user-forward -o docker0 -d 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow any any 224.0.0.0/4 any 0.0.0.0/0 in comment=416c6c6f772049507634206d756c74696361737420286d444e532c205353445029
+-A ufw-user-input -d 224.0.0.0/4 -j ACCEPT
+
+### tuple ### allow tcp 22 0.0.0.0/0 any 0.0.0.0/0 in comment=416c6c6f77205443502032322066726f6d20616e797768657265
+-A ufw-user-input -p tcp --dport 22 -j ACCEPT
+
+### tuple ### allow tcp 443 0.0.0.0/0 any 0.0.0.0/0 in comment=416c6c6f7720544350203434332066726f6d20616e797768657265
+-A ufw-user-input -p tcp --dport 443 -j ACCEPT
+
+### END RULES ###
+
+### LOGGING ###
+-A ufw-after-logging-input -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10
+-I ufw-logging-deny -m conntrack --ctstate INVALID -j RETURN -m limit --limit 3/min --limit-burst 10
+-A ufw-logging-deny -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10
+-A ufw-logging-allow -j LOG --log-prefix "[UFW ALLOW] " -m limit --limit 3/min --limit-burst 10
+### END LOGGING ###
+
+### RATE LIMITING ###
+-A ufw-user-limit -m limit --limit 3/minute -j LOG --log-prefix "[UFW LIMIT BLOCK] "
+-A ufw-user-limit -j REJECT
+-A ufw-user-limit-accept -j ACCEPT
+### END RATE LIMITING ###
+COMMIT

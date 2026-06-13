@@ -1,0 +1,15 @@
+[Unit]
+Description=Mount unit for kf5-5-113-qt-5-15-11-core22, revision 1
+After=snapd.mounts-pre.target
+Before=snapd.mounts.target
+
+[Mount]
+What=/var/lib/snapd/snaps/kf5-5-113-qt-5-15-11-core22_1.snap
+Where=/snap/kf5-5-113-qt-5-15-11-core22/1
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=snapd.mounts.target
+WantedBy=multi-user.target

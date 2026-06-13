@@ -1,0 +1,109 @@
+*filter
+:ufw6-user-input - [0:0]
+:ufw6-user-output - [0:0]
+:ufw6-user-forward - [0:0]
+:ufw6-before-logging-input - [0:0]
+:ufw6-before-logging-output - [0:0]
+:ufw6-before-logging-forward - [0:0]
+:ufw6-user-logging-input - [0:0]
+:ufw6-user-logging-output - [0:0]
+:ufw6-user-logging-forward - [0:0]
+:ufw6-after-logging-input - [0:0]
+:ufw6-after-logging-output - [0:0]
+:ufw6-after-logging-forward - [0:0]
+:ufw6-logging-deny - [0:0]
+:ufw6-logging-allow - [0:0]
+:ufw6-user-limit - [0:0]
+:ufw6-user-limit-accept - [0:0]
+### RULES ###
+
+### tuple ### allow any any ff00::/8 any ::/0 in comment=49507636206d756c746963617374
+-A ufw6-user-input -d ff00::/8 -j ACCEPT
+
+### tuple ### allow udp 5353 ::/0 any fe80::/10 in comment=6d444e53204950763620666538303a3a2f3130
+-A ufw6-user-input -p udp --dport 5353 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow udp 5353 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=6d444e53204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p udp --dport 5353 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow udp 1900 ::/0 any fe80::/10 in comment=53534450204950763620666538303a3a2f3130
+-A ufw6-user-input -p udp --dport 1900 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow udp 1900 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=53534450204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p udp --dport 1900 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow udp 3702 ::/0 any fe80::/10 in comment=57532d446973636f7665727920554450204950763620666538303a3a2f3130
+-A ufw6-user-input -p udp --dport 3702 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow udp 3702 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=57532d446973636f7665727920554450204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p udp --dport 3702 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow tcp 3702 ::/0 any fe80::/10 in comment=57532d446973636f7665727920544350204950763620666538303a3a2f3130
+-A ufw6-user-input -p tcp --dport 3702 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow tcp 3702 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=57532d446973636f7665727920544350204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p tcp --dport 3702 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow tcp 51826 ::/0 any fe80::/10 in comment=486f6d654b6974204950763620666538303a3a2f3130
+-A ufw6-user-input -p tcp --dport 51826 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow tcp 51826 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=486f6d654b6974204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p tcp --dport 51826 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow tcp 5540 ::/0 any fe80::/10 in comment=4d617474657220544350204950763620666538303a3a2f3130
+-A ufw6-user-input -p tcp --dport 5540 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow tcp 5540 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=4d617474657220544350204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p tcp --dport 5540 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow udp 5540 ::/0 any fe80::/10 in comment=4d617474657220554450204950763620666538303a3a2f3130
+-A ufw6-user-input -p udp --dport 5540 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow udp 5540 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=4d617474657220554450204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p udp --dport 5540 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow tcp 5580 ::/0 any fe80::/10 in comment=4d617474657220536572766572204950763620666538303a3a2f3130
+-A ufw6-user-input -p tcp --dport 5580 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow tcp 5580 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=4d617474657220536572766572204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p tcp --dport 5580 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow udp 49152 ::/0 any fe80::/10 in comment=34393135373a4d61747465722064796e616d696320554450204950763620666538303a3a2f3130
+-A ufw6-user-input -p udp --dport 49152 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow udp 49152 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=34393135373a4d61747465722064796e616d696320554450204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p udp --dport 49152 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow udp 53 ::/0 any fe80::/10 in comment=444e5320554450204950763620666538303a3a2f3130
+-A ufw6-user-input -p udp --dport 53 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow udp 53 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=444e5320554450204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p udp --dport 53 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow tcp 53 ::/0 any fe80::/10 in comment=444e5320544350204950763620666538303a3a2f3130
+-A ufw6-user-input -p tcp --dport 53 -s fe80::/10 -j ACCEPT
+
+### tuple ### allow tcp 53 ::/0 any fd7a:115c:a1e0::d933:3869 in comment=444e5320544350204950763620666437613a313135633a613165303a3a643933333a333836392f313238
+-A ufw6-user-input -p tcp --dport 53 -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
+
+### tuple ### allow tcp 443 ::/0 any ::/0 in comment=485454505320416e797768657265
+-A ufw6-user-input -p tcp --dport 443 -j ACCEPT
+
+### tuple ### allow tcp 22 ::/0 any ::/0 in comment=53534820416e797768657265
+-A ufw6-user-input -p tcp --dport 22 -j ACCEPT
+
+### END RULES ###
+
+### LOGGING ###
+-A ufw6-after-logging-input -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10
+-I ufw6-logging-deny -m conntrack --ctstate INVALID -j RETURN -m limit --limit 3/min --limit-burst 10
+-A ufw6-logging-deny -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10
+-A ufw6-logging-allow -j LOG --log-prefix "[UFW ALLOW] " -m limit --limit 3/min --limit-burst 10
+### END LOGGING ###
+
+### RATE LIMITING ###
+-A ufw6-user-limit -m limit --limit 3/minute -j LOG --log-prefix "[UFW LIMIT BLOCK] "
+-A ufw6-user-limit -j REJECT
+-A ufw6-user-limit-accept -j ACCEPT
+### END RATE LIMITING ###
+COMMIT

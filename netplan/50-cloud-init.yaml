@@ -1,0 +1,10 @@
+network:
+  version: 2
+  wifis:
+    wlp1s0:
+      dhcp4: true
+      access-points:
+        "ALHN-736E":
+          auth:
+            key-management: "psk"
+            password: "KSx6Ap7DVX"

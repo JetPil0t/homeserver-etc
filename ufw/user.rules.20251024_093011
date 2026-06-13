@@ -1,0 +1,247 @@
+*filter
+:ufw-user-input - [0:0]
+:ufw-user-output - [0:0]
+:ufw-user-forward - [0:0]
+:ufw-before-logging-input - [0:0]
+:ufw-before-logging-output - [0:0]
+:ufw-before-logging-forward - [0:0]
+:ufw-user-logging-input - [0:0]
+:ufw-user-logging-output - [0:0]
+:ufw-user-logging-forward - [0:0]
+:ufw-after-logging-input - [0:0]
+:ufw-after-logging-output - [0:0]
+:ufw-after-logging-forward - [0:0]
+:ufw-logging-deny - [0:0]
+:ufw-logging-allow - [0:0]
+:ufw-user-limit - [0:0]
+:ufw-user-limit-accept - [0:0]
+### RULES ###
+
+### tuple ### allow any any 224.0.0.0/4 any 0.0.0.0/0 in comment=49507634206d756c746963617374
+-A ufw-user-input -d 224.0.0.0/4 -j ACCEPT
+
+### tuple ### allow udp 5353 0.0.0.0/0 any 192.168.0.0/16 in comment=6d444e532049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p udp --dport 5353 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 5353 0.0.0.0/0 any 10.0.0.0/8 in comment=6d444e5320495076342031302e302e302e302f38
+-A ufw-user-input -p udp --dport 5353 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow udp 5353 0.0.0.0/0 any 172.16.0.0/12 in comment=6d444e532049507634203137322e31362e302e302f3132
+-A ufw-user-input -p udp --dport 5353 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow udp 5353 0.0.0.0/0 any 172.17.0.0/16 in comment=6d444e532049507634203137322e31372e302e302f3136
+-A ufw-user-input -p udp --dport 5353 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 5353 0.0.0.0/0 any 172.18.0.0/16 in comment=6d444e532049507634203137322e31382e302e302f3136
+-A ufw-user-input -p udp --dport 5353 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 5353 0.0.0.0/0 any 172.20.0.0/16 in comment=6d444e532049507634203137322e32302e302e302f3136
+-A ufw-user-input -p udp --dport 5353 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 1900 0.0.0.0/0 any 192.168.0.0/16 in comment=535344502049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p udp --dport 1900 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 1900 0.0.0.0/0 any 10.0.0.0/8 in comment=5353445020495076342031302e302e302e302f38
+-A ufw-user-input -p udp --dport 1900 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow udp 1900 0.0.0.0/0 any 172.16.0.0/12 in comment=535344502049507634203137322e31362e302e302f3132
+-A ufw-user-input -p udp --dport 1900 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow udp 1900 0.0.0.0/0 any 172.17.0.0/16 in comment=535344502049507634203137322e31372e302e302f3136
+-A ufw-user-input -p udp --dport 1900 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 1900 0.0.0.0/0 any 172.18.0.0/16 in comment=535344502049507634203137322e31382e302e302f3136
+-A ufw-user-input -p udp --dport 1900 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 1900 0.0.0.0/0 any 172.20.0.0/16 in comment=535344502049507634203137322e32302e302e302f3136
+-A ufw-user-input -p udp --dport 1900 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 3702 0.0.0.0/0 any 192.168.0.0/16 in comment=57532d446973636f76657279205544502049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p udp --dport 3702 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 3702 0.0.0.0/0 any 10.0.0.0/8 in comment=57532d446973636f766572792055445020495076342031302e302e302e302f38
+-A ufw-user-input -p udp --dport 3702 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow udp 3702 0.0.0.0/0 any 172.16.0.0/12 in comment=57532d446973636f76657279205544502049507634203137322e31362e302e302f3132
+-A ufw-user-input -p udp --dport 3702 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow udp 3702 0.0.0.0/0 any 172.17.0.0/16 in comment=57532d446973636f76657279205544502049507634203137322e31372e302e302f3136
+-A ufw-user-input -p udp --dport 3702 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 3702 0.0.0.0/0 any 172.18.0.0/16 in comment=57532d446973636f76657279205544502049507634203137322e31382e302e302f3136
+-A ufw-user-input -p udp --dport 3702 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 3702 0.0.0.0/0 any 172.20.0.0/16 in comment=57532d446973636f76657279205544502049507634203137322e32302e302e302f3136
+-A ufw-user-input -p udp --dport 3702 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 3702 0.0.0.0/0 any 192.168.0.0/16 in comment=57532d446973636f76657279205443502049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p tcp --dport 3702 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 3702 0.0.0.0/0 any 10.0.0.0/8 in comment=57532d446973636f766572792054435020495076342031302e302e302e302f38
+-A ufw-user-input -p tcp --dport 3702 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow tcp 3702 0.0.0.0/0 any 172.16.0.0/12 in comment=57532d446973636f76657279205443502049507634203137322e31362e302e302f3132
+-A ufw-user-input -p tcp --dport 3702 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow tcp 3702 0.0.0.0/0 any 172.17.0.0/16 in comment=57532d446973636f76657279205443502049507634203137322e31372e302e302f3136
+-A ufw-user-input -p tcp --dport 3702 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 3702 0.0.0.0/0 any 172.18.0.0/16 in comment=57532d446973636f76657279205443502049507634203137322e31382e302e302f3136
+-A ufw-user-input -p tcp --dport 3702 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 3702 0.0.0.0/0 any 172.20.0.0/16 in comment=57532d446973636f76657279205443502049507634203137322e32302e302e302f3136
+-A ufw-user-input -p tcp --dport 3702 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 51826 0.0.0.0/0 any 192.168.0.0/16 in comment=35313832393a486f6d654b69742049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p tcp --dport 51826 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 51826 0.0.0.0/0 any 10.0.0.0/8 in comment=35313832393a486f6d654b697420495076342031302e302e302e302f38
+-A ufw-user-input -p tcp --dport 51826 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow tcp 51826 0.0.0.0/0 any 172.16.0.0/12 in comment=35313832393a486f6d654b69742049507634203137322e31362e302e302f3132
+-A ufw-user-input -p tcp --dport 51826 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow tcp 51826 0.0.0.0/0 any 172.17.0.0/16 in comment=35313832393a486f6d654b69742049507634203137322e31372e302e302f3136
+-A ufw-user-input -p tcp --dport 51826 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 51826 0.0.0.0/0 any 172.18.0.0/16 in comment=35313832393a486f6d654b69742049507634203137322e31382e302e302f3136
+-A ufw-user-input -p tcp --dport 51826 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 51826 0.0.0.0/0 any 172.20.0.0/16 in comment=35313832393a486f6d654b69742049507634203137322e32302e302e302f3136
+-A ufw-user-input -p tcp --dport 51826 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 5540 0.0.0.0/0 any 192.168.0.0/16 in comment=4d6174746572205443502049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p tcp --dport 5540 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 5540 0.0.0.0/0 any 10.0.0.0/8 in comment=4d61747465722054435020495076342031302e302e302e302f38
+-A ufw-user-input -p tcp --dport 5540 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow tcp 5540 0.0.0.0/0 any 172.16.0.0/12 in comment=4d6174746572205443502049507634203137322e31362e302e302f3132
+-A ufw-user-input -p tcp --dport 5540 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow tcp 5540 0.0.0.0/0 any 172.17.0.0/16 in comment=4d6174746572205443502049507634203137322e31372e302e302f3136
+-A ufw-user-input -p tcp --dport 5540 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 5540 0.0.0.0/0 any 172.18.0.0/16 in comment=4d6174746572205443502049507634203137322e31382e302e302f3136
+-A ufw-user-input -p tcp --dport 5540 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 5540 0.0.0.0/0 any 172.20.0.0/16 in comment=4d6174746572205443502049507634203137322e32302e302e302f3136
+-A ufw-user-input -p tcp --dport 5540 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 5540 0.0.0.0/0 any 192.168.0.0/16 in comment=4d6174746572205544502049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p udp --dport 5540 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 5540 0.0.0.0/0 any 10.0.0.0/8 in comment=4d61747465722055445020495076342031302e302e302e302f38
+-A ufw-user-input -p udp --dport 5540 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow udp 5540 0.0.0.0/0 any 172.16.0.0/12 in comment=4d6174746572205544502049507634203137322e31362e302e302f3132
+-A ufw-user-input -p udp --dport 5540 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow udp 5540 0.0.0.0/0 any 172.17.0.0/16 in comment=4d6174746572205544502049507634203137322e31372e302e302f3136
+-A ufw-user-input -p udp --dport 5540 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 5540 0.0.0.0/0 any 172.18.0.0/16 in comment=4d6174746572205544502049507634203137322e31382e302e302f3136
+-A ufw-user-input -p udp --dport 5540 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 5540 0.0.0.0/0 any 172.20.0.0/16 in comment=4d6174746572205544502049507634203137322e32302e302e302f3136
+-A ufw-user-input -p udp --dport 5540 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 5580 0.0.0.0/0 any 192.168.0.0/16 in comment=4d6174746572205365727665722049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p tcp --dport 5580 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 5580 0.0.0.0/0 any 10.0.0.0/8 in comment=4d61747465722053657276657220495076342031302e302e302e302f38
+-A ufw-user-input -p tcp --dport 5580 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow tcp 5580 0.0.0.0/0 any 172.16.0.0/12 in comment=4d6174746572205365727665722049507634203137322e31362e302e302f3132
+-A ufw-user-input -p tcp --dport 5580 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow tcp 5580 0.0.0.0/0 any 172.17.0.0/16 in comment=4d6174746572205365727665722049507634203137322e31372e302e302f3136
+-A ufw-user-input -p tcp --dport 5580 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 5580 0.0.0.0/0 any 172.18.0.0/16 in comment=4d6174746572205365727665722049507634203137322e31382e302e302f3136
+-A ufw-user-input -p tcp --dport 5580 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 5580 0.0.0.0/0 any 172.20.0.0/16 in comment=4d6174746572205365727665722049507634203137322e32302e302e302f3136
+-A ufw-user-input -p tcp --dport 5580 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 49152 0.0.0.0/0 any 192.168.0.0/16 in comment=34393135373a4d61747465722064796e616d6963205544502049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p udp --dport 49152 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 49152 0.0.0.0/0 any 10.0.0.0/8 in comment=34393135373a4d61747465722064796e616d69632055445020495076342031302e302e302e302f38
+-A ufw-user-input -p udp --dport 49152 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow udp 49152 0.0.0.0/0 any 172.16.0.0/12 in comment=34393135373a4d61747465722064796e616d6963205544502049507634203137322e31362e302e302f3132
+-A ufw-user-input -p udp --dport 49152 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow udp 49152 0.0.0.0/0 any 172.17.0.0/16 in comment=34393135373a4d61747465722064796e616d6963205544502049507634203137322e31372e302e302f3136
+-A ufw-user-input -p udp --dport 49152 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 49152 0.0.0.0/0 any 172.18.0.0/16 in comment=34393135373a4d61747465722064796e616d6963205544502049507634203137322e31382e302e302f3136
+-A ufw-user-input -p udp --dport 49152 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 49152 0.0.0.0/0 any 172.20.0.0/16 in comment=34393135373a4d61747465722064796e616d6963205544502049507634203137322e32302e302e302f3136
+-A ufw-user-input -p udp --dport 49152 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 53 0.0.0.0/0 any 192.168.0.0/16 in comment=444e53205544502049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p udp --dport 53 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 53 0.0.0.0/0 any 10.0.0.0/8 in comment=444e532055445020495076342031302e302e302e302f38
+-A ufw-user-input -p udp --dport 53 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow udp 53 0.0.0.0/0 any 172.16.0.0/12 in comment=444e53205544502049507634203137322e31362e302e302f3132
+-A ufw-user-input -p udp --dport 53 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow udp 53 0.0.0.0/0 any 172.17.0.0/16 in comment=444e53205544502049507634203137322e31372e302e302f3136
+-A ufw-user-input -p udp --dport 53 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 53 0.0.0.0/0 any 172.18.0.0/16 in comment=444e53205544502049507634203137322e31382e302e302f3136
+-A ufw-user-input -p udp --dport 53 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow udp 53 0.0.0.0/0 any 172.20.0.0/16 in comment=444e53205544502049507634203137322e32302e302e302f3136
+-A ufw-user-input -p udp --dport 53 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 53 0.0.0.0/0 any 192.168.0.0/16 in comment=444e53205443502049507634203139322e3136382e302e302f3136
+-A ufw-user-input -p tcp --dport 53 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 53 0.0.0.0/0 any 10.0.0.0/8 in comment=444e532054435020495076342031302e302e302e302f38
+-A ufw-user-input -p tcp --dport 53 -s 10.0.0.0/8 -j ACCEPT
+
+### tuple ### allow tcp 53 0.0.0.0/0 any 172.16.0.0/12 in comment=444e53205443502049507634203137322e31362e302e302f3132
+-A ufw-user-input -p tcp --dport 53 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow tcp 53 0.0.0.0/0 any 172.17.0.0/16 in comment=444e53205443502049507634203137322e31372e302e302f3136
+-A ufw-user-input -p tcp --dport 53 -s 172.17.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 53 0.0.0.0/0 any 172.18.0.0/16 in comment=444e53205443502049507634203137322e31382e302e302f3136
+-A ufw-user-input -p tcp --dport 53 -s 172.18.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 53 0.0.0.0/0 any 172.20.0.0/16 in comment=444e53205443502049507634203137322e32302e302e302f3136
+-A ufw-user-input -p tcp --dport 53 -s 172.20.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 80 0.0.0.0/0 any 192.168.0.0/16 in comment=48545450204c414e
+-A ufw-user-input -p tcp --dport 80 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 8123 0.0.0.0/0 any 192.168.0.0/16 in comment=486f6d6520417373697374616e74204c414e
+-A ufw-user-input -p tcp --dport 8123 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 443 0.0.0.0/0 any 0.0.0.0/0 in comment=485454505320416e797768657265
+-A ufw-user-input -p tcp --dport 443 -j ACCEPT
+
+### tuple ### allow tcp 22 0.0.0.0/0 any 0.0.0.0/0 in comment=53534820416e797768657265
+-A ufw-user-input -p tcp --dport 22 -j ACCEPT
+
+### END RULES ###
+
+### LOGGING ###
+-A ufw-after-logging-input -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10
+-I ufw-logging-deny -m conntrack --ctstate INVALID -j RETURN -m limit --limit 3/min --limit-burst 10
+-A ufw-logging-deny -j LOG --log-prefix "[UFW BLOCK] " -m limit --limit 3/min --limit-burst 10
+-A ufw-logging-allow -j LOG --log-prefix "[UFW ALLOW] " -m limit --limit 3/min --limit-burst 10
+### END LOGGING ###
+
+### RATE LIMITING ###
+-A ufw-user-limit -m limit --limit 3/minute -j LOG --log-prefix "[UFW LIMIT BLOCK] "
+-A ufw-user-limit -j REJECT
+-A ufw-user-limit-accept -j ACCEPT
+### END RATE LIMITING ###
+COMMIT

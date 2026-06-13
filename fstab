@@ -1,0 +1,21 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/ubuntu-vg/ubuntu-lv during curtin installation
+/dev/disk/by-id/dm-uuid-LVM-N9J175LCFue06efIfi2C63Ow3SEescYRYkEykE32U5eKcwYsByrkjWeuvfViM4dD / ext4 defaults 0 1
+# /boot was on /dev/sda2 during curtin installation
+/dev/disk/by-uuid/f5647841-e7dc-46fd-b9de-435f407d2bc1 /boot ext4 defaults 0 1
+# /boot/efi was on /dev/sda1 during curtin installation
+/dev/disk/by-uuid/00CD-70C5 /boot/efi vfat defaults 0 1
+/swap.img	none	swap	sw	0	0
+
+# Mac Mini media directories (SMB) for media server to use
+//192.168.1.194/Movies  /mnt/macmini-media/downloads/movies  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+//192.168.1.194/Movies-1  /mnt/macmini-media/movies  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+//192.168.1.194/TV  /mnt/macmini-media/downloads/tv  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+//192.168.1.194/TV\040Shows  /mnt/macmini-media/tv  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+
