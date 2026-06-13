@@ -1,0 +1,16 @@
+# ── Homeserver MCP — elevated read-only commands for james ────────────────────
+
+# UFW status (read-only — rule changes must be made by james directly)
+james ALL=(ALL) NOPASSWD: /usr/sbin/ufw status verbose
+
+# System logs
+james ALL=(ALL) NOPASSWD: /bin/journalctl *
+
+# View /etc git history (etckeeper)
+james ALL=(ALL) NOPASSWD: /usr/bin/git -C /etc log *
+james ALL=(ALL) NOPASSWD: /usr/bin/git -C /etc diff *
+james ALL=(ALL) NOPASSWD: /usr/bin/git -C /etc status
+
+# etckeeper manual commit (after james approves a /etc change)
+james ALL=(ALL) NOPASSWD: /usr/bin/etckeeper commit *
+
