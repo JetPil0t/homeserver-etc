@@ -1,0 +1,17 @@
+[Unit]
+Description=Server Basic Health Check
+Requires=docker.service
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+
+User=james
+Group=james
+
+ExecStartPre=/usr/bin/test -f /home/james/monitoring/server_basic_healthcheck.env
+ExecStart=/home/james/monitoring/server_basic_healthcheck.sh
+
+Nice=10
+
