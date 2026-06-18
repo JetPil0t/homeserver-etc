@@ -1,11 +1,11 @@
 [Unit]
-Description=Mount unit for firefox, revision 8417
+Description=Mount unit for firefox, revision 8504
 After=snapd.mounts-pre.target
 Before=snapd.mounts.target
 
 [Mount]
-What=/var/lib/snapd/snaps/firefox_8417.snap
-Where=/snap/firefox/8417
+What=/var/lib/snapd/snaps/firefox_8504.snap
+Where=/snap/firefox/8504
 Type=squashfs
 Options=nodev,ro,x-gdu.hide,x-gvfs-hide
 LazyUnmount=yes
