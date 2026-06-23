@@ -14,8 +14,8 @@
 /swap.img	none	swap	sw	0	0
 
 # Mac Mini media directories (SMB) for media server to use
-//192.168.1.194/Movies  /mnt/macmini-media/downloads/movies  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
-//192.168.1.194/Movies-1  /mnt/macmini-media/movies  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
-//192.168.1.194/TV  /mnt/macmini-media/downloads/tv  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
-//192.168.1.194/TV\040Shows  /mnt/macmini-media/tv  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+//192.168.1.199/Movies  /mnt/macmini-media/downloads/movies  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+//192.168.1.199/Movies-1  /mnt/macmini-media/movies  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+//192.168.1.199/TV  /mnt/macmini-media/downloads/tv  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+//192.168.1.199/TV\040Shows  /mnt/macmini-media/tv  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
 
