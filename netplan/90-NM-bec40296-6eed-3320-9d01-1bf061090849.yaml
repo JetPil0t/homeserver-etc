@@ -15,7 +15,7 @@ network:
             uuid: "bec40296-6eed-3320-9d01-1bf061090849"
             name: "netplan-wlp1s0-ALHN-736E"
             passthrough:
-              connection.timestamp: "1781190024"
+              connection.timestamp: "1782646242"
               ipv6.ip6-privacy: "-1"
               proxy._: ""
       networkmanager:
