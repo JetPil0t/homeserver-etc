@@ -35,14 +35,14 @@
 ### tuple ### allow any any 224.0.0.0/4 any 0.0.0.0/0 in comment=416c6c6f772049507634206d756c74696361737420286d444e532c205353445029
 -A ufw-user-input -d 224.0.0.0/4 -j ACCEPT
 
-### tuple ### allow tcp 22 0.0.0.0/0 any 0.0.0.0/0 in comment=416c6c6f77205443502032322066726f6d20616e797768657265
--A ufw-user-input -p tcp --dport 22 -j ACCEPT
-
 ### tuple ### allow tcp 443 0.0.0.0/0 any 0.0.0.0/0 in comment=416c6c6f7720544350203434332066726f6d20616e797768657265
 -A ufw-user-input -p tcp --dport 443 -j ACCEPT
 
 ### tuple ### allow udp 5683 0.0.0.0/0 any 0.0.0.0/0 in
 -A ufw-user-input -p udp --dport 5683 -j ACCEPT
+
+### tuple ### allow tcp 22 0.0.0.0/0 any 0.0.0.0/0 in_tailscale0
+-A ufw-user-input -i tailscale0 -p tcp --dport 22 -j ACCEPT
 
 ### END RULES ###
 

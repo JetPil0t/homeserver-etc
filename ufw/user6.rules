@@ -20,9 +20,6 @@
 ### tuple ### allow any any ::/0 any fe80::/10 in comment=416c6c6f7720616c6c204c414e20747261666669632028495076362920666538303a3a2f3130
 -A ufw6-user-input -s fe80::/10 -j ACCEPT
 
-### tuple ### allow any any ::/0 any fd7a:115c:a1e0::d933:3869 in comment=416c6c6f7720616c6c204c414e20747261666669632028495076362920666437613a313135633a613165303a3a643933333a333836392f313238
--A ufw6-user-input -s fd7a:115c:a1e0::d933:3869 -j ACCEPT
-
 ### tuple ### allow any any ::/0 any ::/0 in_lo
 -A ufw6-user-input -i lo -j ACCEPT
 
@@ -32,14 +29,14 @@
 ### tuple ### allow any any ff00::/8 any ::/0 in comment=416c6c6f772049507636206d756c746963617374
 -A ufw6-user-input -d ff00::/8 -j ACCEPT
 
-### tuple ### allow tcp 22 ::/0 any ::/0 in comment=416c6c6f77205443502032322066726f6d20616e797768657265
--A ufw6-user-input -p tcp --dport 22 -j ACCEPT
-
 ### tuple ### allow tcp 443 ::/0 any ::/0 in comment=416c6c6f7720544350203434332066726f6d20616e797768657265
 -A ufw6-user-input -p tcp --dport 443 -j ACCEPT
 
 ### tuple ### allow udp 5683 ::/0 any ::/0 in
 -A ufw6-user-input -p udp --dport 5683 -j ACCEPT
+
+### tuple ### allow tcp 22 ::/0 any ::/0 in_tailscale0
+-A ufw6-user-input -i tailscale0 -p tcp --dport 22 -j ACCEPT
 
 ### END RULES ###
 
