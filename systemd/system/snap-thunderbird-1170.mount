@@ -1,11 +1,11 @@
 [Unit]
-Description=Mount unit for thunderbird, revision 1138
+Description=Mount unit for thunderbird, revision 1170
 After=snapd.mounts-pre.target
 Before=snapd.mounts.target
 
 [Mount]
-What=/var/lib/snapd/snaps/thunderbird_1138.snap
-Where=/snap/thunderbird/1138
+What=/var/lib/snapd/snaps/thunderbird_1170.snap
+Where=/snap/thunderbird/1170
 Type=squashfs
 Options=nodev,ro,x-gdu.hide,x-gvfs-hide
 LazyUnmount=yes
