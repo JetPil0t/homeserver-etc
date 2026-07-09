@@ -1,11 +1,11 @@
 [Unit]
-Description=Mount unit for gnome-46-2404, revision 145
+Description=Mount unit for gnome-46-2404, revision 164
 After=snapd.mounts-pre.target
 Before=snapd.mounts.target
 
 [Mount]
-What=/var/lib/snapd/snaps/gnome-46-2404_145.snap
-Where=/snap/gnome-46-2404/145
+What=/var/lib/snapd/snaps/gnome-46-2404_164.snap
+Where=/snap/gnome-46-2404/164
 Type=squashfs
 Options=nodev,ro,x-gdu.hide,x-gvfs-hide
 LazyUnmount=yes
