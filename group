@@ -76,3 +76,5 @@ gnome-remote-desktop:x:987:
 gdm:x:124:
 docker:x:986:james
 nordvpn:x:985:james
+lightdm:x:125:
+nopasswdlogin:x:126:

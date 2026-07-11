@@ -51,3 +51,4 @@ gnome-remote-desktop:!*:20316::::::
 gnome-initial-setup:!:20316::::::
 gdm:!:20316::::::
 _rpc:!:20612::::::
+statd:!:20612::::::

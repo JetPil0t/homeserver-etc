@@ -75,4 +75,5 @@ pipewire:!::
 gnome-remote-desktop:!*::
 gdm:!::
 docker:!::james
-nordvpn:!::
+nordvpn:!::james
+lightdm:!::
