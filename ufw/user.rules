@@ -47,6 +47,12 @@
 ### tuple ### allow udp 5353 0.0.0.0/0 any 0.0.0.0/0 in_wlp1s0
 -A ufw-user-input -i wlp1s0 -p udp --dport 5353 -j ACCEPT
 
+### tuple ### allow tcp 5901 0.0.0.0/0 any 192.168.1.0/24 in comment=564e43204c414e
+-A ufw-user-input -p tcp --dport 5901 -s 192.168.1.0/24 -j ACCEPT
+
+### tuple ### allow tcp 5901 0.0.0.0/0 any 0.0.0.0/0 in_tailscale0 comment=564e4320766961205461696c7363616c65
+-A ufw-user-input -i tailscale0 -p tcp --dport 5901 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###
