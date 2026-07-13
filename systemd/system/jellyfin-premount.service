@@ -1,0 +1,13 @@
+[Unit]
+Description=Pre-mount check for Jellyfin
+Before=docker.service
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/james/homeserver-git/scripts/jellyfin-premount.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+

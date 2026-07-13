@@ -14,11 +14,12 @@
 /swap.img	none	swap	sw	0	0
 
 # Mac Mini media directories (SMB) for media server to use
-//192.168.1.199/Movies  /mnt/macmini-media/downloads/movies  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
-//192.168.1.199/Movies-1  /mnt/macmini-media/movies  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
-//192.168.1.199/TV  /mnt/macmini-media/downloads/tv  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
-//192.168.1.199/TV\040Shows  /mnt/macmini-media/tv  cifs  credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+# Add ,ro to make access read only (ensure read only on Mac sharing settings as well then!)
+//192.168.1.199/Movies /mnt/macmini-media/downloads/movies cifs credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,nofail,x-systemd.automount  0  0
+//192.168.1.199/Movies-1 /mnt/macmini-media/movies cifs credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,nofail,x-systemd.automount  0  0
+//192.168.1.199/TV /mnt/macmini-media/downloads/tv cifs credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,nofail,x-systemd.automount  0  0
+//192.168.1.199/TV\040Shows /mnt/macmini-media/tv cifs credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,nofail,x-systemd.automount  0  0
 
 # External hard drives (NTFS file system)
 UUID=FC3C9C713C9C2922 /mnt/james2tb ntfs-3g defaults,windows_names,locale=en_US.utf8 0 0
-
+UUID=14345D0D345CF36A /mnt/james1tb ntfs-3g defaults,windows_names,locale=en_US.utf8 0 0
