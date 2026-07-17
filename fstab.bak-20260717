@@ -21,5 +21,5 @@
 //192.168.1.199/TV\040Shows /mnt/macmini-media/tv cifs credentials=/etc/samba/macmini-credentials,uid=1000,gid=1000,_netdev,nofail,x-systemd.automount  0  0
 
 # External hard drives (NTFS file system)
-UUID=FC3C9C713C9C2922 /mnt/james2tb ntfs3 nofail,x-systemd.device-timeout=5,x-systemd.automount,uid=1000,gid=1000,umask=022 0 0
-UUID=14345D0D345CF36A /mnt/james1tb ntfs3 nofail,x-systemd.device-timeout=5,x-systemd.automount,uid=1000,gid=1000,umask=022,force 0 0
+UUID=FC3C9C713C9C2922 /mnt/james2tb ntfs-3g defaults,nofail,x-systemd.device-timeout=5,windows_names,locale=en_US.utf8 0 0
+UUID=14345D0D345CF36A /mnt/james1tb ntfs-3g defaults,nofail,x-systemd.device-timeout=5,windows_names,locale=en_US.utf8 0 0
