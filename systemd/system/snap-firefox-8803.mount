@@ -1,11 +1,11 @@
 [Unit]
-Description=Mount unit for thunderbird, revision 1201
+Description=Mount unit for firefox, revision 8803
 After=snapd.mounts-pre.target
 Before=snapd.mounts.target
 
 [Mount]
-What=/var/lib/snapd/snaps/thunderbird_1201.snap
-Where=/snap/thunderbird/1201
+What=/var/lib/snapd/snaps/firefox_8803.snap
+Where=/snap/firefox/8803
 Type=squashfs
 Options=nodev,ro,x-gdu.hide,x-gvfs-hide
 LazyUnmount=yes
